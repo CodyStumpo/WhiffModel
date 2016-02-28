@@ -51,7 +51,7 @@ modelWhiffByTypeAndVelBucket = modelWhiffByTypeAndVelBucket %>%
   select(Init_Vel, pitchtype, swingingstrike) %>%
   group_by(pitchtype, mph=round(Init_Vel,1)) %>%
   summarize(whiff = mean(swingingstrike), count=n()) %>%
-  filter (count > 50)
+  filter (count > 10)
 
 
 ggplot(modelWhiffByTypeAndVelBucket)+geom_point(aes(mph, whiff, color=pitchtype), size=2)+labs(title="Model")
