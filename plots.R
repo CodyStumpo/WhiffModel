@@ -170,26 +170,26 @@ whiffByTypeAndXBucket=train %>%
 ggplot(whiffByTypeAndXBucket)+geom_point(aes(X, whiff, color=pitchtype), size=2)
 
 
-inside = function(X,bats) {
+outside = function(X,bats) {
 X * ifelse(bats =="L",-1,1)
 }
 
-train$inside <- inside(train$Plate_X, train$bats)
+train$outside <- outside(train$Plate_X, train$bats)
 
 
 
-whiffByTypeAndInsideBucket=train %>%
-  select(inside, pitchtype, swingingstrike) %>%
-  group_by(pitchtype, inside=round(inside,1)) %>%
+whiffByTypeAndOutsideBucket=train %>%
+  select(outside, pitchtype, swingingstrike) %>%
+  group_by(pitchtype, outside=round(outside,1)) %>%
   summarize(whiff = mean(swingingstrike), count=n()) %>%
   filter (count > 50)
 
 
-ggplot(whiffByTypeAndInsideBucket)+geom_point(aes(inside, whiff, color=pitchtype), size=2)
+ggplot(whiffByTypeAndOutsideBucket)+geom_point(aes(outside, whiff, color=pitchtype), size=2)
 
 #so keep data as inches away from middle of plate.  Interact with LL, RR, LR, RL
-#make a more linear variable to whiff, inside^2
-ggplot(whiffByTypeAndInsideBucket)+geom_point(aes(inside^2, whiff, color=pitchtype), size=2)
+#make a more linear variable to whiff, outside^2
+ggplot(whiffByTypeAndOutsideBucket)+geom_point(aes(outside^2, whiff, color=pitchtype), size=2)
 
 dTreeFitPruned2 = prune(dtreeFit, .001)
 plot(dTreeFitPruned2, uniform = TRUE)
