@@ -6,4 +6,4 @@ Given >1M pitches leading to swings, described by pitch f/x with ~30 variables, 
 ![Whiff by Pitchtype & Velocity, in the Model](https://raw.githubusercontent.com/CodyStumpo/WhiffModel/master/Model.png)
 
 ## Practical Use
-![Example Use Case](https://raw.githubusercontent.com/CodyStumpo/WhiffModel/master/Where.png)
+![Example Use Case](https://raw.githubusercontent.com/CodyStumpo/WhiffModel/master/Where2.png)
