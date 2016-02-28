@@ -1,6 +1,4 @@
 # WhiffModel
-Predict Swinging Strikes from Pitch f/x data
-
 Given >1M pitches leading to swings, described by pitch f/x with ~30 variables, build a model to predict and explain
 
 ## Predict
