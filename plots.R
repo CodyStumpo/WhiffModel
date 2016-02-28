@@ -211,3 +211,14 @@ text(dTreeFitPruned2, use.n=TRUE, all=TRUE, cex=.6)
 #    If pretty high pitch and pitchtype = FB, KN, SC and high-contact batter -> 25% else 41%
 #   If pretty high pitch and pitchtype = (SL,CH,CB) and outside, 49%, else 71% 
 #    If pretty high pitch and pitchtype = (SL,CH,CB) and outside and high-contact batter, 41% else 57%
+
+#made a version of cleanTrain in it with Plate_Z and batterWtAvg, so this works
+x=cleanTrain %>% select(swingingstrike, Plate_Z, pitchtype, batterWtAvg) %>%
+  filter(Plate_Z > 3 & batterWtAvg < .15) %>%
+  group_by(pitchtype, Z=round(Plate_Z,1), batter= round(batterWtAvg, 2)) %>%
+  summarize(whiff = mean(swingingstrike), count=n()) %>%
+  filter (count > 20)
+
+#summary(x$whiff)
+# yes, high pitches to high-contact batters have ~10% whiff rate
+qplot(x$Z, x$batter, colour=x$whiff) + scale_colour_gradient(limits=c(0, 1), low="green", high="red")
