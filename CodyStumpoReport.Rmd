@@ -61,8 +61,7 @@ ggplot(modelWhiffByTypeAndVelBucket)+geom_point(aes(mph, whiff, color=pitchtype)
 
 
 #### Pitch Attribute significance
-In addition to predictive power, the models help explain the relationships in the data. For example, the decision tree tells us that the most powerful predictive variable is if the pitch is high or low. For high pitches, it helps if the pitch is also outside (but not if the batter himself has a low whiff rate). For low pitches, outside curveballs get a lot of whiffs, etc....
-The MARS model agrees that after the batter's whiff rate, pitch height is the most important attribute, followed by being not a fastball.
+In addition to predictive power, the models help explain the relationships in the data. The models agree the pitch characteristics that most control whiffs are pitch-height, then some combination of being outside, being a fastball or offspeed, and the contact-tendency of the batter. Through the model, I find nuggets in the data like swings at very low offspeed pitches lead to whiffs 90% of the time while swings on high pitches to high-contact batters lead to whiffs only 10% of the time.
 
 ### Conclusion
 The model can be used in any number of practical ways for a Major League Baseball team.
