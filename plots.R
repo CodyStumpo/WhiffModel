@@ -196,21 +196,22 @@ plot(dTreeFitPruned2, uniform = TRUE)
 text(dTreeFitPruned2, use.n=TRUE, all=TRUE, cex=.6)
 
 # 20%
-# If not-high pitch, whiff goes to 15%
-#  If low pitch, whiff goes to 13%, else 25%
-#   If low and high-contact batter, whiff goes to 10%
-#     If low and high-contact batter, and pitchtype = CB or FB, whiff goes to 9% else 20%
-#   If low and low-contact batter, whiff goes to 17%
-#    If low and low-contact batter and outside -> 15%, else 28%
-#    If low and low-contact batter and outside and FB/CB -> 14% else 20%
-# If high pitch, whiff goes to 51%
-#  If very high pitch, whiff goes to 75%, else 43%
-#   If very high pitch and pitchtype = FB, KN, SC -> 55% else (SL, CH, CB) -> 81%
-#    If very very high pitch and pitchtype = SL, CH, CB -> 91%, else 74%
-#   If pretty high pitch and pitchtype = FB, KN, SC -> 32% else (SL,CH,CB) -> 52%
-#    If pretty high pitch and pitchtype = FB, KN, SC and high-contact batter -> 25% else 41%
-#   If pretty high pitch and pitchtype = (SL,CH,CB) and outside, 49%, else 71% 
-#    If pretty high pitch and pitchtype = (SL,CH,CB) and outside and high-contact batter, 41% else 57%
+# If not-low pitch, whiff goes to 15%
+#  If high pitch, whiff goes to 13%, else 25%
+#   If high and high-contact batter, whiff goes to 10%
+#     If high and high-contact batter, and pitchtype = CB or FB, whiff goes to 9% else 20%
+#   If high and low-contact batter, whiff goes to 17%
+#    If high and low-contact batter and outside -> 15%, else 28%
+#    If hgih and low-contact batter and outside and FB/CB -> 14% else 20%
+# If low pitch, whiff goes to 51%
+#  If very low pitch, whiff goes to 75%, else 43%
+#   If very low pitch and pitchtype = FB, KN, SC -> 55% else (SL, CH, CB) -> 81%
+#    If very very low pitch and pitchtype = SL, CH, CB -> 91%, else 74%
+#   If pretty low pitch and pitchtype = FB, KN, SC -> 32% else (SL,CH,CB) -> 52%
+#    If pretty low pitch and pitchtype = FB, KN, SC and high-contact batter -> 25% else 41%
+#   If pretty low pitch and pitchtype = (SL,CH,CB) and outside, 49%, else 71% 
+#    If pretty low pitch and pitchtype = (SL,CH,CB) and outside and high-contact batter, 41% else 57%
+
 
 #made a version of cleanTrain in it with Plate_Z and batterWtAvg, so this works
 x=cleanTrain %>% select(swingingstrike, Plate_Z, pitchtype, batterWtAvg) %>%
