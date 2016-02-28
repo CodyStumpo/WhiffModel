@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Use data on 1.2M swings from major league baseball to form a model that predicts and explains what characteristics of a pitch lead to a swing and a miss. As I don't have data on all pitches, just swings, I can't explain what induces a batter to swing in the first place. Only given that they decide to swing, what kind of pitch will make them miss. Without complete pitch data, I also can't look into the effect of pitch sequencing on whiffs. 
 
-But I do have 30 attributes of each pitch from pitch f/x about the position, speed, and acceleration in 3 dimensions, as well as spin and some contextual data around who the pitcher and batter were.  Pitch f/x itself categorizes the pitches into types (fastball, curveball, etc...), so when you put this all together it's quite a rich dataset and let's us build a fairly good model in terms of both predictive power on a test set and in terms of explanatory power.
+But I do have 30 attributes of each pitch from pitch f/x about the position, speed, and acceleration in 3 dimensions, as well as spin and some contextual data around who the pitcher and batter were.  Pitch f/x itself categorizes the pitches into types (fastball, curveball, etc...), so when you put this all together it's quite a rich dataset and lets us build a fairly good model in terms of both predictive power on a test set and in terms of explanatory power.
 
 ### Exploratory Data Analysis
 First, I made some plots of the data to get a sense of it, using my knowledge of baseball to guide what dimensions might be useful to look at together.
