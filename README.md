@@ -1,2 +1,11 @@
 # WhiffModel
 Predict Swinging Strikes from Pitch f/x data
+
+Given >1M pitches leading to swings, described by pitch f/x with ~30 variables, build a model to predict and explain
+
+## Predict
+![Whiff by Pitchtype & Velocity, in the Data](https://raw.githubusercontent.com/CodyStumpo/WhiffModel/master/Data.png)
+![Whiff by Pitchtype & Velocity, in the Model](https://raw.githubusercontent.com/CodyStumpo/WhiffModel/master/Model.png)
+
+## Practical Use
+![Example Use Case](https://raw.githubusercontent.com/CodyStumpo/WhiffModel/master/Where.png)
