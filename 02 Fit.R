@@ -82,7 +82,7 @@ LogLoss(KN_lmPredict,actual[KNtest]) #.49
 #paste(names(training), collapse ="+")
 glmFitPlus <- glm(swingingstrike ~ yearid+throws+bats+pitchtype+Init_Vel+Init_Pos_X+Init_Pos_Z+Init_Vel_X+Init_Vel_Y+
                 Init_Vel_Z+Init_Accel_X+Init_Accel_Y+Init_Accel_Z+Plate_Vel+Break_X+Break_Z+SpinRate+batterWtAvg+
-                throwsBats+isStrike+relativeZsq+inside+inside2+pitcherWtAvgFB+velDiff+
+                throwsBats+isStrike+relativeZsq+outside+outside2+pitcherWtAvgFB+velDiff+
                 SpinRate*(pitchtype=="KN")+SpinRate*Init_Vel*(pitchtype=="FB")+
                 (Init_Vel < 88)*(pitchtype=="FB")+(Init_Vel >= 88)*(pitchtype=="FB")+
                 (Init_Vel < 78)*(pitchtype=="CB")+(Init_Vel >= 78)*(pitchtype=="CB")+  
