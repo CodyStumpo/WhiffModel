@@ -1,3 +1,4 @@
+# Suppose a pitcher had a fastball with certain characteristics, where does the model say to locate it for maximum whiffage?
 example = cleanTest %>% 
   filter (pitchtype=="FB" & throws=="R" & bats=="R" & Init_Vel >91 & Init_Vel < 93 & SpinRate > 2100 & SpinRate < 2200) 
 example$yearid=2015
