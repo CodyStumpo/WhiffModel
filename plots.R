@@ -196,13 +196,13 @@ plot(dTreeFitPruned2, uniform = TRUE)
 text(dTreeFitPruned2, use.n=TRUE, all=TRUE, cex=.6)
 
 # 20%
-# If low pitch, whiff goes to 15%
-#  If very low pitch, whiff goes to 13%, else 25%
-#   If very low and high-contact batter, whiff goes to 10%
-#     If very low and high-contact batter, and pitchtype = CB or FB, whiff goes to 9% else 20%
-#   If very low and low-contact batter, whiff goes to 17%
-#    If very low and low-contact batter and outside -> 15%, else 28%
-#    If very low and low-contact batter and outside and FB/CB -> 14% else 20%
+# If not-high pitch, whiff goes to 15%
+#  If low pitch, whiff goes to 13%, else 25%
+#   If low and high-contact batter, whiff goes to 10%
+#     If low and high-contact batter, and pitchtype = CB or FB, whiff goes to 9% else 20%
+#   If low and low-contact batter, whiff goes to 17%
+#    If low and low-contact batter and outside -> 15%, else 28%
+#    If low and low-contact batter and outside and FB/CB -> 14% else 20%
 # If high pitch, whiff goes to 51%
 #  If very high pitch, whiff goes to 75%, else 43%
 #   If very high pitch and pitchtype = FB, KN, SC -> 55% else (SL, CH, CB) -> 81%
