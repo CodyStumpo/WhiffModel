@@ -21,12 +21,12 @@ midZ = median(train$SZ_Top - train$SZ_Bottom)
 relZ2 = (Z - midZ)^2
 
 example = example[c(1:2500),]
-example$inside=rep(X, 50)
-example$inside2=rep(X2, 50)
+example$outside=rep(X, 50)
+example$outside2=rep(X2, 50)
 example$relativeZsq=sort(rep(Z, 50))
 example$relativeZsq=(example$relativeZsq-midZ)^2
 
-example$isStrike=mapply(isStrike, example$inside, sort(rep(Z, 50)), 3.5, 1.5)
+example$isStrike=mapply(isStrike, example$outside, sort(rep(Z, 50)), 3.5, 1.5)
 exDTree = predict(dtreeFit, example)
 exGLM <- predict(glmFitPlus, example, type="response")
 exEarth <- pmin(pmax(predict(earthFit, example),0),1)
@@ -35,8 +35,8 @@ example$swingingstrike = as.numeric((exDTree + exGLM + exEarth) / 3)
 
 save(example, file="example.rda")
 
-qplot(example$inside, sort(rep(Z, 50)), colour=example$swingingstrike) + scale_colour_gradient(limits=c(0, 1), low="red", high="green") +
+qplot(example$outside, sort(rep(Z, 50)), colour=example$swingingstrike) + scale_colour_gradient(limits=c(0, 1), low="red", high="green") +
   geom_rect(xmin = -8.5/12, xmax = 8.5/12,   ymin = 1.5, ymax = 3.5, 
            fill=NA, linetype=1, color="black", size=1) +
-  labs(title = "Modeled 92mph FB @ 2150 rpm from RHP to RHB", x="Inside (catcher's POV)", y = "Pitch Height", colour="Whiff")
+  labs(title = "Modeled 92mph FB @ 2150 rpm from RHP to RHB", x="Outside (catcher's POV)", y = "Pitch Height", colour="Whiff")
 
