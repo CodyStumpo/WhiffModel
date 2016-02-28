@@ -3,7 +3,7 @@ Given >1M pitches leading to swings, described by pitch f/x with ~30 variables, 
 
 ## Predict
 ![Whiff by Pitchtype & Velocity, in the Data](https://raw.githubusercontent.com/CodyStumpo/WhiffModel/master/Data.png)
-![Whiff by Pitchtype & Velocity, in the Model](https://raw.githubusercontent.com/CodyStumpo/WhiffModel/master/Model2.png)
+![Whiff by Pitchtype & Velocity, in the Model](https://raw.githubusercontent.com/CodyStumpo/WhiffModel/master/Model3.png)
 
 ## Practical Use
 ![Example Use Case](https://raw.githubusercontent.com/CodyStumpo/WhiffModel/master/Where2.png)
