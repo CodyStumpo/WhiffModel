@@ -70,13 +70,13 @@ relativeZsq = function(Z, top, bottom) {
 cleanTrain$relativeZsq = relativeZsq (cleanTrain$Plate_Z, cleanTrain$SZ_Top, cleanTrain$SZ_Bottom)
 
 
-#inside, ^2. linear relationship to whiff. (see plot)
-inside = function(X,bats) {
+#outside, ^2. linear relationship to whiff. (see plot)
+outside = function(X,bats) {
   X * ifelse(bats =="L",-1,1)
 }
 
-cleanTrain$inside <- inside(cleanTrain$Plate_X, cleanTrain$bats)
-cleanTrain$inside2 <- cleanTrain$inside^2
+cleanTrain$outside <- outside(cleanTrain$Plate_X, cleanTrain$bats)
+cleanTrain$outside2 <- cleanTrain$outside^2
 
 
 
@@ -158,8 +158,8 @@ cleanTest$throwsBats <- factor(cleanTest$throwsBats)
 
 cleanTest$isStrike = mapply(isStrike, cleanTest$Plate_X, cleanTest$Plate_Z, cleanTest$SZ_Top, cleanTest$SZ_Bottom)
 cleanTest$relativeZsq = relativeZsq (cleanTest$Plate_Z, cleanTest$SZ_Top, cleanTest$SZ_Bottom)
-cleanTest$inside <- inside(cleanTest$Plate_X, cleanTest$bats)
-cleanTest$inside2 <- cleanTest$inside^2
+cleanTest$outside <- outside(cleanTest$Plate_X, cleanTest$bats)
+cleanTest$outside2 <- cleanTest$outside^2
 
 
 
@@ -197,4 +197,4 @@ cleanTest=cleanTest[,!names(cleanTest) %in% drops]
 cleanTest <- cleanTest[,-1]
 
 
-rm(avgFB, batterAvgSandM, lgAvgFB,  pitchCount, test, train, drops, batterWtAvg, decay, inside, isStrike, relativeZsq, avgFBVel, avgSandM)
+rm(avgFB, batterAvgSandM, lgAvgFB,  pitchCount, test, train, drops, batterWtAvg, decay, outside, isStrike, relativeZsq, avgFBVel, avgSandM)
